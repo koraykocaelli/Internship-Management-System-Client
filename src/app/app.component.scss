@@ -1,0 +1,73 @@
+/* app.component.scss */
+
+.navbar {
+    background-color: #ffffff; /* Arka plan beyaz */
+    color: #000000; /* Yazılar siyah */
+    justify-content: space-between;
+
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 75px;
+  }
+
+  .brand-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    margin-right: 75px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+  }
+  
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+    visibility: visible; 
+  }  
+  
+  .small-logo {
+    height: 3rem;
+    max-width: 100%; /* Logo boyutunu belirt */
+    visibility: visible;
+  
+  }
+  
+  .navbar-nav {
+    background-color: #ffffff; /* Arka plan beyaz */
+  }
+  
+  .nav-item {
+    margin: 0 10px; /* Menü öğeleri arasında boşluk bırak */
+  }
+  
+  .nav-link {
+    color: #000000; /* Yazılar siyah */
+  }
+  
+  .btn-outline-success {
+    color: #28a745; /* Buton yazı rengi yeşil */
+    border-color: #28a745; /* Buton kenarlık rengi yeşil */
+  }
+  
+  .btn-outline-success:hover {
+    color: #ffffff; /* Buton yazı rengi beyaz hover durumunda */
+    background-color: #28a745; /* Buton arka plan rengi yeşil hover durumunda */
+  }
+  
+  .form-control {
+    width: 200px; /* Arama kutusunun genişliği */
+  }
+  
+  .btn-outline-success.search-btn {
+    margin-left: 10px; /* Search butonundan önceki boşluğu arttır */
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-toggler {
+      background-color: #28a745; /* Mobildeki menü düğmesinin rengi yeşil */
+    }
+  }
+  

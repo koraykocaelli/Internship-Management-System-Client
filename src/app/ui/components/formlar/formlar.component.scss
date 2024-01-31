@@ -1,0 +1,102 @@
+i {
+    font-size: 20px;
+    color: beige;
+    margin: auto;
+
+
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .university-title {
+    font-size: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+  }  
+  
+  .university-title a {
+    color: beige ;
+  }
+
+  .nav {
+    display: inline-block;
+    vertical-align: middle;
+  }  
+
+  .search-box {
+    display: none;
+    position: absolute;
+    top: 40px; /* İstediğin konuma göre ayarla */
+    right: 5px; /* İstediğin konuma göre ayarla */
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: beige;
+  }
+
+  .small-logo {
+    width: 100px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain the aspect ratio */
+    margin-right: 10px;
+    /* Adjust the margin as needed */
+    /* Add other styling properties as needed */
+  }
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    font-family: 'Asap', sans-serif;;
+  }
+
+  .footer-logo img {
+    width: 50px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain the aspect ratio */
+    margin-right: 10px;
+    /* Adjust the margin as needed */
+  }
+
+  .social-icons ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-icons ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .social-icons a {
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .main-banner .header-text {
+    padding-top: 150px; /* Sayfanın üst kısmında yer almasını sağlamak için padding ekleyin */
+  }
+
+  .caption {
+    margin-top: -70px; /* Metnin daha üste taşınması için negatif margin ekleyin */
+  }
+
+  .pdf-list ul li a {
+    font-size: 18px; /* Örnek olarak 18 piksel */
+  }
+
+  .menu-item a {
+    color: beige;
+   /* Diğer stillendirme özellikleri */
+  }
+
+  .menu-item a.active,
+  .menu-item a:hover {
+    color: yellow;
+  /* Seçili veya üzerine gelindiğindeki stil */
+  }

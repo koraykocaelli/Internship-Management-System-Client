@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Toggle Styles */
+
+#viewport {
+    display: flex;
+}
+
+#content {
+    flex: 1;
+    position: relative;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+    z-index: 1000;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #37474F;
+    transition: all 0.5s ease;
+}
+
+#sidebar header {
+    background-color: #263238;
+    font-size: 20px;
+    line-height: 52px;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+}
+
+#sidebar header a {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+#sidebar header a img {
+    width: 80px; /* Logo boyutu arttırıldı */
+    margin-bottom: 10px;
+}
+
+#sidebar .nav {
+    padding-top: 20px;
+}
+
+#sidebar .nav a {
+    background: none;
+    border-bottom: 1px solid #455A64;
+    color: #CFD8DC;
+    font-size: 14px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#sidebar .nav a:hover {
+    background: none;
+    color: #ECEFF1;
+}
+
+#sidebar .nav a i {
+    margin-right: 16px;
+}
+
+/* Navbar Styles */
+
+nav.navbar {
+    background-color: #263238;
+    color: #fff;
+}
+
+nav.navbar ul.navbar-nav.navbar-right {
+    margin-right: 20px;
+}
+
+nav.navbar ul.navbar-nav.navbar-right li {
+    margin-top: 15px;
+}
+
+/* Container Styles */
+
+.container-fluid {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Header Styles */
+
+h1 {
+    color: #333;
+    margin-top: 0;
+    padding: 20px 0;
+}
+
+
+.custom-navbar-left {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.custom-navbar-left li {
+    margin-right: 10px;
+}
+
+/* Öğrenci Bilgi Kutusu */
+.student-info-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px; /* Kutuların genişliği arttırıldı */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Öğrenci bilgilerini ortalamak için */
+}
+
+.student-info-box h2 {
+    color: #333;
+}
+
+.student-info {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info-item {
+    border: 1px solid #ddd;
+    padding: 20px; /* Padding arttırıldı */
+    margin: 10px;
+    text-align: center;
+    width: 48%; /* Kutuların genişliği ayarlandı */
+    box-sizing: border-box; /* Padding ve border'ı içeriğin bir parçası olarak hesapla */
+}
+
+.info-item strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Yatay Grup Stilleri */
+.horizontal-group {
+    display: flex;
+    width: 100%; /* Genişlik ayarlandı */
+    justify-content: space-between;
+    margin-bottom: 20px; /* Gruplar arasına boşluk bırakıldı */
+}
+
+/* Dikey Grup Stilleri */
+.vertical-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%; /* Genişlik ayarlandı */
+}
