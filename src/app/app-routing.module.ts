@@ -7,13 +7,15 @@ import { SpLayoutComponent } from './student-portal/sp-layout/sp-layout.componen
 import { ApLayoutComponent } from './advisor-portal/ap-layout/ap-layout.component';
 import { StudentInfoComponent } from './student-portal/components/student-info/student-info.component';
 import { OgBilgiComponent } from './advisor-portal/components/og-bilgi/og-bilgi.component';
+import { AdvisorsComponent } from './admin/components/advisors/advisors.component';
 
 const routes: Routes = [
   {
     path: "admin", component: LayoutComponent, children: [
-      { path: "", component: DashboardComponent },
-      { path: "advisors", loadChildren: () => import("./admin/components/advisors/advisors.module").then(module => module.AdvisorsModule) },
+      { path: "", component: AdvisorsComponent   },
+      { path: "dashboard", loadChildren: () => import("./admin/components/dashboard/dashboard.module").then(module => module.DashboardModule) },
       { path: "students", loadChildren: () => import("./admin/components/students/students.module").then(module => module.StudentsModule) },
+      { path: "st-int-nt", loadChildren: () => import("./admin/components/st-int-nt/st-int-nt.module").then(module => module.StIntNtModule) },
     ]
   },
   { path: "", component: HomeComponent },
