@@ -6,6 +6,28 @@ import { Observable, firstValueFrom } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  isLoggedIn: any;
+
+
+  // private apiUrl = 'http://your-csharp-backend/api';
+
+  // constructor(private http: HttpClient) {}
+
+  // login(username: string, password: string) {
+  //   return this.http.post(`${this.apiUrl}/login`, { username, password });
+  // }
+
+
+
+  // private isLoggedIn: boolean = false;
+
+  // constructor(private router: Router) {}
+
+  // login() {
+  //   // Kullanıcı girişi başarılı olduğunda çağrılır
+  //   this.isLoggedIn = true;
+  //   this.router.navigate(['/student-portal']); // Yönlendirilecek sayfanın rotasını belirtin
+  // }
 
   constructor(private httpClient: HttpClient) { }
   async login(StudentNo: string, Password: string, UserName: string, callBackFunction?: () => void): Promise<any> {

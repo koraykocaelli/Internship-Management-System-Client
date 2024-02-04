@@ -1,5 +1,8 @@
 <app-ap-header></app-ap-header>
-<app-ap-sidebar></app-ap-sidebar>
-<app-ap-footer></app-ap-footer> 
-
-<router-outlet></router-outlet>
+<mat-drawer-container class="advisor-portal-container">
+    <mat-drawer mode="side" opened class="advisor-portal-left"><app-ap-sidebar></app-ap-sidebar></mat-drawer>    
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+<app-ap-footer></app-ap-footer>
