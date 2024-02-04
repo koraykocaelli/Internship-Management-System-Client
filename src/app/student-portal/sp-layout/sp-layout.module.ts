@@ -11,15 +11,15 @@ import { ComponentsModule } from './components/components.module';
     declarations: [
         SpLayoutComponent,
     ],
-    exports: [
-        SpLayoutComponent
-    ],
     imports: [
         CommonModule,
         ComponentsModule,
         RouterModule,
         MatSidenavModule,
+    ],
+    exports: [
+        SpLayoutComponent
+    ],
 
-    ]
 })
 export class SpLayoutModule { }

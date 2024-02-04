@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path: "og-bilgi" ,component: OgBilgiComponent }
+      {path: "" ,component: OgBilgiComponent }
     ])
   ]
 })
