@@ -11,12 +11,21 @@ import { AdvisorPortalModule } from './advisor-portal/advisor-portal.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0ee2aed (update)
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 0ee2aed (update)
 
   ],
   imports: [
@@ -29,8 +38,12 @@ import { NavbarComponent } from './navbar/navbar.component';
     NgxSpinnerModule,
     HttpClientModule,    
   ],
+<<<<<<< HEAD
   providers: [
     {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }
+=======
+  providers: [ 
+>>>>>>> 0ee2aed (update)
   ],
   bootstrap: [AppComponent]
 })
