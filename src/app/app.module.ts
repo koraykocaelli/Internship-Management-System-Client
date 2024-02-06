@@ -11,22 +11,12 @@ import { AdvisorPortalModule } from './advisor-portal/advisor-portal.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AdminComponent } from './services/admin/admin.component';
-import { UiComponent } from './services/ui/ui.component';
-import { AdvisorPortalComponent } from './services/advisor-portal/advisor-portal.component';
-import { StudentPortalComponent } from './services/student-portal/student-portal.component';
-
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AdminComponent,
-    UiComponent,
-    AdvisorPortalComponent,
-    StudentPortalComponent,
 
   ],
   imports: [
@@ -40,7 +30,7 @@ import { StudentPortalComponent } from './services/student-portal/student-portal
     HttpClientModule,    
   ],
   providers: [
-    {provide: "baseUrl", useValue: "" }
+    {provide: "baseUrl", useValue: "https://localhost:7165/api", multi:true }
   ],
   bootstrap: [AppComponent]
 })
