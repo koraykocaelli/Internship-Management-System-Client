@@ -12,6 +12,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
 
   constructor(private userService : UserService, spinner: NgxSpinnerService) {
     super(spinner);
+
   }
   
   ngOnInit(): void {

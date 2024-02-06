@@ -1,1 +1,32 @@
-<p>og-staj-def works!</p>
+<div class="container">
+    <h2>Staj Defteri ve Onaylama</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">Öğrenci No</div>
+            <div class="col col-2">Öğrenci İsmi</div>
+            <div class="col col-3">Bölümü</div>
+            <div class="col col-4">Staj Defteri</div>
+            <div class="col col-5">Yoklama Çizelgesi</div>
+            <div class="col col-6">Haftalık Tablo</div>
+            <div class="col col-7">Staj Onay Durumu</div>
+            <div class="col col-8">Gönder</div>
+        </li>
+        <li class="table-row">
+            <div class="col col-1" data-label="Student No">123456</div>
+            <div class="col col-2" data-label="Student Name">John Doe</div>
+            <div class="col col-3" data-label="Department">Computer Engineering</div>
+            <div class="col col-4" data-label="Student Notebook"><a href="student-portal/student-intership-notebook">Görüntüle</a></div>
+            <div class="col col-5" data-label="Attendance Sheet"><a href="#">Görüntüle</a></div>
+            <div class="col col-6" data-label="Weekly Schedule"><a href="#">Görüntüle</a></div>
+            <div class="col col-7" data-label="Approval">
+                <select name="approval_status">
+                    <option value="onayla">Onayla</option>
+                    <option value="onaylama">Onaylama</option>
+                </select>
+            </div>
+            <div class="col col-8" data-label="Send">
+                <input type="submit" value="Gönder">
+            </div>
+        </li>
+    </ul>
+</div>
