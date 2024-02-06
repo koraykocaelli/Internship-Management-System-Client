@@ -20,22 +20,22 @@ export class AdvisorsComponent extends BaseComponent implements OnInit {
       this.showSpinner(SpinnerType.BallNewton);
       
       
-      this.httpClientService.get<Advisors[]>({
+      this.httpClientService.get({
         controller: "advisor"
       }).subscribe(data => console.log(data));
 
-      // this.httpClientService.post({
-      //   controller: "advisor"
-      // }, {
-      //   "advisorName": "d",
-      //   "adviserSurname": "a",
-      //   "tC_NO": "12345678922",
-      //   "facultyName": "a",
-      //   "departmentName": "a",
-      //   "programName": "a",
-      //   "address": "a",
-      //   "email": "asdasdasddcccc@gmail.com"        
-      // }).subscribe();
+      this.httpClientService.post({
+        controller: "advisor"
+      }, {
+        "advisorName": "d",
+        "adviserSurname": "a",
+        "tC_NO": "12345678922",
+        "facultyName": "a",
+        "departmentName": "a",
+        "programName": "a",
+        "address": "a",
+        "email": "asdasdasddcccc@gmail.com"        
+      }).subscribe();
 
       // this.httpClientService.put({
       //   controller: "advisor",

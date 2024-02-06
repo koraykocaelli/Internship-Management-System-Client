@@ -30,7 +30,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientModule,    
   ],
   providers: [
-    {provide: "baseUrl", useValue: "https://localhost:7165/api", multi:true }
+    {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }
   ],
   bootstrap: [AppComponent]
 })
