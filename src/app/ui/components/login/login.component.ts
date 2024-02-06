@@ -20,12 +20,18 @@ export class LoginComponent extends BaseComponent implements OnInit {
     
   }
 
-  async login(studentNo: string, userName: string, password: string){
+  async login(userName: string, password: string, callBackFunction: void){
     this.showSpinner(SpinnerType.BallNewton);
-    await this.userService.login(studentNo,userName,password, () => this.hideSpinner(SpinnerType.BallNewton));
+    await this.userService.login(userName,password, callBackFunction);
 
   }
 
+  redirectToStudentPortal(){
+    console.log('student portala gidildi')
+  }
+  redirectToAdvisorPortal(){
+    console.log('advisor portala gidildi')
+  }
   
   
   

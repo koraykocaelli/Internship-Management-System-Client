@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://imsprojectapi.azurewebsites.net",
+      "secure": false
+    }
+  }
