@@ -40,12 +40,8 @@ import { JwtModule } from '@auth0/angular-jwt';
       }
     })
   ],
-<<<<<<< HEAD
   providers: [
     {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }
-=======
-  providers: [ 
->>>>>>> 0ee2aed (update)
   ],
   bootstrap: [AppComponent]
 })
