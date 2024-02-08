@@ -10,14 +10,9 @@ import { UserService } from '../../../services/common/models/user.service';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor(private userService : UserService, spinner: NgxSpinnerService) {
     super(spinner);
 
-=======
-  constructor(spinner: NgxSpinnerService) {
-    super(spinner);
->>>>>>> 0ee2aed (update)
   }
   
   ngOnInit(): void {
