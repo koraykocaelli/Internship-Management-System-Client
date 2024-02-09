@@ -1,80 +1,14 @@
 
-<!-- 
+<!-- Eğer kullanıcı giriş yapmışsa ve yeni navbar gösterilmeliyse -->
+<ng-container *ngIf="isLoggedIn() && showNewNavbar()">
+  <app-navbar2></app-navbar2>
+</ng-container>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <div class="brand-container">
-        <a class="logo" href="/">
-          <img src="/src/assets/images/Dogus_universitesi_yeni_logo.png" alt="Logo" class="small-logo">
-        </a>  
-        <a class="navbar-brand" href="#">DOĞUŞ ÜNİVERSİTESİ</a>
-             
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="">Anasayfa</a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="staj-yon">Staj Yönergesi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="staj-def">Staj Defteri</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="formlar">Formlar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="ig-belge">İşe Giriş Belgesi</a> a
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="login">Giriş</a>
-          </li>
-          <li>
-            <a routerLink="admin" class="btn btn-outline-success" type="submit">Admin</a> a b
-          </li>
-    
-        </ul>
-         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Arama Yap.." aria-label="Arama Yap">
-          <button class="btn btn-outline-success" type="submit">Arama Yap</button>
-        </form> -->
-      <!-- </div>
-    </div>
-</nav> --> 
-
-<div *ngIf="showNavbarContent()">
-
+<!-- Eğer kullanıcı giriş yapmamışsa veya eski navbar gösterilmeliyse -->
+<ng-container *ngIf="!isLoggedIn() || !showNewNavbar()">
   <app-navbar></app-navbar>
+</ng-container>
 
-</div>
-
-
-<!-- <div *ngIf="showloginContent()">
-
-  <a routerLink="/student-portal"></a>
-  <app-sp-layout>(loginSuccess)="onLoginSuccess($event)"</app-sp-layout>
-
-</div>
-
-<div *ngIf="showloginContent()">
-
-  <a routerLink="/advisor-portal"></a>
-  <app-ap-layout>(loginSuccess)="onLoginSuccess($event)"</app-ap-layout>
-
-</div> -->
-
-
-
-<!-- <app-sp-layout (loginSuccess)="onLoginSuccess($event)"></app-sp-layout> -->
-
-
-<ngx-spinner size="default" name="newton" type="ball-newton-cradle" ></ngx-spinner>
-
-
-
+<ngx-spinner size="default" name="newton" type="ball-newton-cradle"></ngx-spinner>
 <router-outlet></router-outlet>
+

@@ -1,41 +1,45 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-
+import { Router } from '@angular/router';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from './services/ui/custom-toastr.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-// onLoginSuccess($event: Event) {
-// throw new Error('Method not implemented.');
-// }
+  toastrService: any;
   title = 'InternshipManagementSystem';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+   
+  }
 
-  showNavbarContent(): boolean {
-    // Navbar içeriğini kontrol etmek için gereken koşulları burada belirleyin
+  refreshPage(): void {
+    window.location.reload();
+  }
+
+  isLoggedIn(): boolean {
     return this.router.url !== '/login';
   }
 
-  showloginContent(): boolean {
-    // Login sayfasının içeriğini kontrol etmek için gereken koşulları burada belirleyin
-    return this.router.url === '/login';
-  }
-  
-  showstudentportalContent(): boolean {
-    // Student-portal sayfasının içeriğini kontrol etmek için gereken koşulları burada belirleyin
-    return this.router.url === '/student-portal';
+  showNewNavbar(): boolean {
+    return this.isLoggedIn() && (this.router.url.startsWith('/student-portal') || this.router.url.startsWith('/advisor-portal'));
   }
 
-  onLoginSuccess(isSuccessful: boolean) {
-    if (isSuccessful) {
-      // Başarılı giriş durumunda yönlendirme yapabilirsiniz
-      this.router.navigate(['/student-portal']);
+  logout(): void { 
+    // Kullanıcı çıkış yaptığında anasayfaya yönlendirme yapılır
+    this.router.navigateByUrl('');
+  }
+
+  redirectToPortal(): void {
+    if (this.router.url === '/login') {
+      const userRole = localStorage.getItem('userRole');
+      if (userRole === 'student') {
+        this.router.navigate(['/student-portal']);
+      } else if (userRole === 'advisor') {
+        this.router.navigate(['/advisor-portal']);
+      }
     }
   }
-
-
 }

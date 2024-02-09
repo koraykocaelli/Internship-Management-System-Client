@@ -1,0 +1,30 @@
+.navbar {
+    .navbar-toggler {
+      border-color: #000;
+    }
+    .navbar2-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000; /* Doğuş Üniversitesi yazısını siyah yap */
+      &:hover {
+        color: #000; /* Mouse üzerine gelindiğinde rengi değiştirmiyoruz */
+      }
+    }
+    .btn-outline-primary {
+      color: #007bff;
+      border-color: #007bff;
+      &:hover {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff; /* Çıkış Yap butonunun rengi mavi, üzerine gelindiğinde renk değişmiyor */
+      }
+    }
+  }
+  .logo {
+    width: 50px;
+    height: auto;
+  }
+  .brand-container {
+    margin-right: auto;
+  }
+  

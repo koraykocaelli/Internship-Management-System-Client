@@ -11,12 +11,16 @@ import { AdvisorPortalModule } from './advisor-portal/advisor-portal.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
+import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    Navbar2Component,
 
   ],
   imports: [
@@ -27,7 +31,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentPortalModule,
     AdvisorPortalModule,
     NgxSpinnerModule,
-    HttpClientModule,    
+    HttpClientModule,  
+    ToastrModule.forRoot(),  
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => localStorage.getItem("accessToken"),
+        allowedDomains:["https://imsprojectapi.azurewebsites.net/api"]
+      }
+    })
   ],
   providers: [
     {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }

@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({

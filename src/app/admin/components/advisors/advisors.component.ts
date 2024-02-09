@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService, Spinner } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { HttpClientService } from '../../../services/common/http-client.service';
-import { Advisors } from '../../../contracts/advisors';
+import { Advisor } from '../../../contracts/advisor';
+
 
 
 @Component({
@@ -20,22 +21,22 @@ export class AdvisorsComponent extends BaseComponent implements OnInit {
       this.showSpinner(SpinnerType.BallNewton);
       
       
-      this.httpClientService.get({
+      this.httpClientService.get<Advisor[]>({
         controller: "advisor"
-      }).subscribe(data => console.log(data));
+      }).subscribe(data => {console.log(data)});
 
-      this.httpClientService.post({
-        controller: "advisor"
-      }, {
-        "advisorName": "d",
-        "adviserSurname": "a",
-        "tC_NO": "12345678922",
-        "facultyName": "a",
-        "departmentName": "a",
-        "programName": "a",
-        "address": "a",
-        "email": "asdasdasddcccc@gmail.com"        
-      }).subscribe();
+      //  this.httpClientService.post({
+      //    controller: "advisor"
+      //  }, {
+      //    "advisorName": "d",
+      //    "adviserSurname": "a",
+      //    "tC_NO": "12345678922",
+      //    "facultyName": "a",
+      //    "departmentName": "a",
+      //    "programName": "a",
+      //    "address": "a",
+      //    "email": "asdasdasddcccc@gmail.com"        
+      //  }).subscribe();
 
       // this.httpClientService.put({
       //   controller: "advisor",
