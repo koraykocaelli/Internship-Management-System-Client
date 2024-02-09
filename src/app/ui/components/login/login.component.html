@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/src/assets/css/style.css">
 </head>
 
-
 <body>
     <div class="login-wrap">
         <div class="login-html">
@@ -20,18 +19,19 @@
                 <div class="sign-in-htm">
                     <div class="group">
                         <label for="user" class="label">Öğrenci No:</label>
-                        <input #txtStudentNo id="user" type="text" class="input">
+                        <input #txtStudentNo id="user" type="text" class="input" placeholder="Öğrenci No">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Şifre:</label>
-                        <input #txtPasswordStudent id="pass" type="password" class="input" data-type="password">
+                        <input #txtPasswordStudent id="pass" type="password" class="input" data-type="password"
+                            placeholder="Şifre">
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
                     </div>
                     <div class="group">
                         <input type="submit" class="button" value="Giriş Yap"
-                            (click)="login(txtStudentNo.value,txtPasswordStudent.value, redirectToStudentPortal())">
+                            (click)="loginStudent(txtStudentNo.value, txtPasswordStudent.value)">
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">
@@ -42,16 +42,17 @@
                 <div class="sign-up-htm">
                     <div class="group">
                         <label for="user" class="label">Kullanıcı Adı:</label>
-                        <input #txtUserName id="user" type="text" class="input">
+                        <input #txtUserName id="user" type="text" class="input" placeholder="Kullanıcı Adı">
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Şifre:</label>
-                        <input #txtPasswordAdvisor id="pass" type="password" class="input" data-type="password">
+                        <input #txtPasswordAdvisor id="pass" type="password" class="input" data-type="password"
+                            placeholder="Şifre">
                     </div>
 
                     <div class="group">
-                        <input type="submit" class="button" (click)="login(txtUserName.value, txtPasswordAdvisor.value, redirectToAdvisorPortal())"
-                            value="Giriş Yap" >
+                        <input type="submit" class="button" (click)="loginAdvisor(txtUserName.value, txtPasswordAdvisor.value)"
+                            value="Giriş Yap">
                     </div>
                     <div class="hr"></div>
                     <div class="foot-lnk">
@@ -65,6 +66,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
