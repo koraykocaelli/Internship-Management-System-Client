@@ -1,13 +1,84 @@
 
 <!-- Eğer kullanıcı giriş yapmışsa ve yeni navbar gösterilmeliyse -->
-<ng-container *ngIf="isLoggedIn() && showNewNavbar()">
+<!-- <ng-container *ngIf="isLoggedIn() && showNewNavbar()">
   <app-navbar2></app-navbar2>
-</ng-container>
+</ng-container> -->
 
 <!-- Eğer kullanıcı giriş yapmamışsa veya eski navbar gösterilmeliyse -->
-<ng-container *ngIf="!isLoggedIn() || !showNewNavbar()">
+<!-- <ng-container *ngIf="!isLoggedIn() || !showNewNavbar()">
   <app-navbar></app-navbar>
-</ng-container>
+</ng-container> -->
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+  <!-- <img src="../assets/image/logo.png" class="logo"> -->
+  
+  <a href="javascript:void(0)" (click)="refreshPage()"> <!-- Logo Link -->
+    <img src="../assets/image/logo.png" class="logo" alt="Ana Sayfa">
+  </a>
+
+    <div class="container-fluid">
+      <div class="brand-container">
+        <a class="navbar-brand" href="javascript:void(0)" (click)="refreshPage()">DOĞUŞ ÜNİVERSİTESİ</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="" *ngIf="!authService.isAuthenticated">Anasayfa</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="staj-yon" *ngIf="!authService.isAuthenticated">Staj Yönergesi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="staj-def" *ngIf="!authService.isAuthenticated">Staj Defteri</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="formlar" *ngIf="!authService.isAuthenticated">Formlar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="ig-belge" *ngIf="!authService.isAuthenticated">İşe Giriş Belgesi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="login" *ngIf="!authService.isAuthenticated">Giriş</a>
+          </li>
+
+          <!-- <li>
+            <a routerLink="admin" class="btn btn-outline-success" type="submit" >Admin</a>
+          </li>
+          <li>
+            <a routerLink="student-portal" class="btn btn-outline-success" type="submit" *ngIf="authService.isAuthenticated">Öğrenci</a>
+          </li>
+          <li>
+            <a routerLink="advisor-portal" class="btn btn-outline-success" type="submit" *ngIf="!authService.isAuthenticated">Danışman</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  style="color:red;" (click)="signOut()" *ngIf="authService.isAuthenticated">Çıkış Yap</a>
+          </li> -->
+
+          <!-- Çıkış Yap Button -->
+          <div class="ml-auto">
+            <button class="btn btn-outline-primary" aria-current="page" (click)="signOut()" *ngIf="authService.isAuthenticated">Çıkış Yap</button>
+          </div>
+          <li>
+
+          </li>
+    
+        </ul>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Arama Yap.." aria-label="Arama Yap">
+          <button class="btn btn-outline-success" type="submit">Arama Yap</button>
+        </form> -->
+      </div>
+    </div>
+</nav>
+
+
 
 <ngx-spinner size="default" name="newton" type="ball-newton-cradle"></ngx-spinner>
 <router-outlet></router-outlet>

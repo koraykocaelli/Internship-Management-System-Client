@@ -22,6 +22,23 @@
     margin-right: 75px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
   }
   
+  
+  .logo{
+    width: 50px;
+    height: auto;
+  }
+
+  .btn-outline-primary {
+    color: #a20000;
+    border-color: #a20000;
+    &:hover {
+      background-color: #a20000;
+      border-color: #a20000;
+      color: #fff; /* Çıkış Yap butonunun rengi mavi, üzerine gelindiğinde renk değişmiyor */
+    }
+  }
+
+  
   .logo {
     display: inline-block;
     vertical-align: middle;

@@ -27,7 +27,7 @@ export class UserService {
     if(tokenResponse)
     localStorage.setItem("accessToken", tokenResponse.token.accessToken);
     
-    this.toastrService.message("Kullanıcı Girişi Başarıyla Sağlanmıştır." , "Giriş Başarılı",{
+    this.toastrService.message("Akademisyen Girişi Başarıyla Sağlanmıştır." , "Hoşgeldiniz!",{
         messageType : ToastrMessageType.Success,
         position:ToastrPosition.TopRight
     })
@@ -47,7 +47,7 @@ export class UserService {
     if(tokenResponse)
     localStorage.setItem("accessToken", tokenResponse.token.accessToken);
 
-    this.toastrService.message("Kullanıcı Girişi Başarıyla Sağlanmıştır." , "Giriş Başarılı",{
+    this.toastrService.message("Öğrenci Girişi Başarıyla Sağlanmıştır." , "Hoşgeldiniz!",{
         messageType : ToastrMessageType.Success,
         position:ToastrPosition.TopRight
     })
