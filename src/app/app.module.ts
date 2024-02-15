@@ -11,6 +11,8 @@ import { AdvisorPortalModule } from './advisor-portal/advisor-portal.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { WorkPlaceInfoModule } from './student-portal/components/work-place-info/work-place-info.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentPortalModule,
     AdvisorPortalModule,
     NgxSpinnerModule,
-    HttpClientModule,    
+    HttpClientModule,
+    WorkPlaceInfoModule,
+    MatDialogModule
   ],
   providers: [
     {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }

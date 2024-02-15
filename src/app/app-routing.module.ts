@@ -23,7 +23,10 @@ const routes: Routes = [
       { path: "", component: StudentInfoComponent},
       { path: "student-intership-approval", loadChildren: () => import("./student-portal/components/student-intership-approval/student-intership-approval.module").then(module => module.StudentIntershipApprovalModule) },
       {path: "student-intership-info", loadChildren: ()=> import("./student-portal/components/student-intership-info/student-intership-info.module").then(module => module.StudentIntershipInfoModule)},
-      {path: "student-intership-notebook", loadChildren: ()=> import("./student-portal/components/student-intership-notebook/student-intership-notebook.module").then(module=> module.StudentIntershipNotebookModule)}
+      {path: "student-intership-notebook", loadChildren: ()=> import("./student-portal/components/student-intership-notebook/student-intership-notebook.module").then(module=> module.StudentIntershipNotebookModule)},
+      {path: "work-place-info", loadChildren: ()=> import("./student-portal/components/work-place-info/work-place-info.module").then(module=> module.WorkPlaceInfoModule)}
+      
+      
     ]
   },  
 
