@@ -24,7 +24,10 @@ const routes: Routes = [
       { path: "", component: StudentInfoComponent, canActivate: [AuthGuard]},
       { path: "student-intership-approval", loadChildren: () => import("./student-portal/components/student-intership-approval/student-intership-approval.module").then(module => module.StudentIntershipApprovalModule), canActivate: [AuthGuard] },
       {path: "student-intership-info", loadChildren: ()=> import("./student-portal/components/student-intership-info/student-intership-info.module").then(module => module.StudentIntershipInfoModule), canActivate: [AuthGuard]},
-      {path: "student-intership-notebook", loadChildren: ()=> import("./student-portal/components/student-intership-notebook/student-intership-notebook.module").then(module=> module.StudentIntershipNotebookModule), canActivate: [AuthGuard]}
+      {path: "student-intership-notebook", loadChildren: ()=> import("./student-portal/components/student-intership-notebook/student-intership-notebook.module").then(module=> module.StudentIntershipNotebookModule), canActivate: [AuthGuard]},
+      {path: "work-place-info", loadChildren: ()=> import("./student-portal/components/work-place-info/work-place-info.module").then(module=> module.WorkPlaceInfoModule)}
+      
+      
     ], canActivate: [AuthGuard]
   },  
 

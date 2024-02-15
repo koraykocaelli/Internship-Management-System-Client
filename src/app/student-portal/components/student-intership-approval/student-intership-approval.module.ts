@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentIntershipApprovalComponent } from './student-intership-approval.component';
+import { StudentInternshipApprovalComponent } from './student-intership-approval.component';
 import { RouterModule } from '@angular/router';
+import { FileUploadDialogModule } from '../file-upload-dialog/file-upload-dialog.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
-    StudentIntershipApprovalComponent
+    StudentInternshipApprovalComponent
   ],
   imports: [
     CommonModule,
+    FileUploadDialogModule,
+    MatDialogModule,
     RouterModule.forChild([
-      {path: "", component: StudentIntershipApprovalComponent}
+      {path: "", component: StudentInternshipApprovalComponent}
     ])
+    
   ]
 })
 export class StudentIntershipApprovalModule { }
