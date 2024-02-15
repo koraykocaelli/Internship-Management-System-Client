@@ -37,7 +37,7 @@
               "src/assets"             
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/assets/css/fontawesome.css",
               "src/assets/css/templatemo-edu-meeting.css",
               "src/assets/css/owl.css",
@@ -112,7 +112,7 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
