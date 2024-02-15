@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { UserService } from '../../../services/common/models/user.service';
+import { AuthService } from '../../../services/common/auth.service';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/ui/custom-toastr.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { UserService } from '../../../services/common/models/user.service';
 })
 export class LoginComponent extends BaseComponent implements OnInit {
 
-  constructor(private userService : UserService, private router: Router, spinner: NgxSpinnerService) {
+  constructor(private userService : UserService, private router: Router, spinner: NgxSpinnerService, private authService: AuthService, private activatedRoute: ActivatedRoute, private toastrService: CustomToastrService) {
     super(spinner);
   }
   
@@ -21,18 +23,29 @@ export class LoginComponent extends BaseComponent implements OnInit {
   async loginAdvisor(userName: string, passwordAdvisor: string){
     this.showSpinner(SpinnerType.BallNewton);
 
-
-
-    //if statement ekledim numaricse istegi gonderiyor
+    // Email doğrulaması 
     if (this.isValidEmail(userName)) {
-    //istek burada |
-    await this.userService.loginAdvisor(userName, passwordAdvisor, () => this.hideSpinner(SpinnerType.BallNewton));
-    this.redirectToAdvisorPortal(); // Başarılı girişten sonra yönlendirme yapılıyor
-
+      await this.userService.loginAdvisor(userName, passwordAdvisor, () => {
+        this.authService.identityCheck();
+         this.activatedRoute.queryParams.subscribe(params => {
+           const returnUrl : string = params["returnUrl"];
+           if (returnUrl)
+            this.router.navigate([returnUrl]);
+        });
+        this.hideSpinner(SpinnerType.BallNewton)
+       }).then(() => {
+        // Başarılı giriş durumunda gerekli yönlendirmeyi yapıldı
+        this.redirectToAdvisorPortal();
+      }).catch(() => {
+         // Hatalı giriş durumunda toastr kullanarak uyarı mesajı gösterildi
+         this.toastrService.message("Kullanıcı Adı Veya Şifre Hatalı!","Hatalı Giriş!", {
+           messageType: ToastrMessageType.Error,
+           position: ToastrPosition.TopRight
+         })
+      });
     } else {
-      alert("Email Adresi Doğru Değil!")
-    }
-    
+       alert("Email Adresi Doğru Değil!")
+     }
   }
 
   async loginStudent(studentNo: string, passwordStudent: string){
@@ -42,9 +55,26 @@ export class LoginComponent extends BaseComponent implements OnInit {
     //if statement ekledim numaricse istegi gonderiyor
     if (isNumeric) {
     //istek burada |
-    await this.userService.loginStudent(studentNo, passwordStudent, () => this.hideSpinner(SpinnerType.BallNewton));
-    this.redirectToStudentPortal(); // Başarılı girişten sonra yönlendirme yapılıyor
-    } else {
+    await this.userService.loginStudent(studentNo, passwordStudent, () => {
+      this.authService.identityCheck();
+
+      this.activatedRoute.queryParams.subscribe(params => {
+        const returnUrl : string = params["returnUrl"];
+        if (returnUrl)
+         this.router.navigate([returnUrl]);
+       });
+      this.hideSpinner(SpinnerType.BallNewton)
+    }).then(() => {
+      // Başarılı giriş durumunda gerekli yönlendirmeyi yapıldı
+      this.redirectToStudentPortal();
+    }).catch(() => {
+      // Hatalı giriş durumunda toastr kullanarak uyarı mesajı gösterildi
+      this.toastrService.message("Öğrenci No Veya Şifre Hatalı!","Hatalı Giriş!", {
+        messageType: ToastrMessageType.Error,
+        position: ToastrPosition.TopRight
+      })
+    });
+     } else {
       alert("Öğrenci No Doğru Değil!")
     }
   
