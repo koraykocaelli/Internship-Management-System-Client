@@ -14,7 +14,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
-import { WorkPlaceInfoModule } from './student-portal/components/work-place-info/work-place-info.module';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
@@ -35,7 +34,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     NgxSpinnerModule,
     HttpClientModule,  
     ToastrModule.forRoot(),  
-    WorkPlaceInfoModule,
     MatDialogModule,
     JwtModule.forRoot({
       config: {

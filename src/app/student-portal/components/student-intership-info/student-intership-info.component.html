@@ -1,127 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staj Bilgi Formu</title>
-</head>
 <body>
-    <div class="container">
-        <div class="text">
-            Staj Bilgi Formu
-        </div>
-        <form action="#" onsubmit="calculateDays()">
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="text" required id="adSoyad">
-                    <div class="underline"></div>
-                    <label for="adSoyad">Ad-Soyad:</label>
-                </div>
-                <div class="input-data">
-                    <input type="text" required id="ogrenciNo">
-                    <div class="underline"></div>
-                    <label for="ogrenciNo">Öğrenci No:</label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="tel" required id="telefonNo">
-                    <div class="underline"></div>
-                    <label for="telefonNo">Telefon No:</label>
-                </div>
-                <div class="input-data">
-                    <input type="text" required id="tcKimlikNo">
-                    <div class="underline"></div>
-                    <label for="tcKimlikNo">T.C Kimlik No:</label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="number" required id="yas">
-                    <div class="underline"></div>
-                    <label for="yas">Yaş:</label>
-                </div>
-                <div class="input-data">
-                    <input type="text" required id="bolum">
-                    <div class="underline"></div>
-                    <label for="bolum">Bölüm:</label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <label for="sgkHizmet">SGK Hizmetlerinden faydalanıyor mu:</label>
-                    <select id="sgkHizmet" required>
-                        <option value="yes">Evet</option>
-                        <option value="no">Hayır</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <label for="isletmeAdi">İşletme Adı:</label>
-                    <input type="text" id="isletmeAdi" required>
-                </div>
-                <div class="input-data">
-                    <label for="personelSayisi">İşletmede Çalışan Personel Sayısı:</label>
-                    <input type="number" id="personelSayisi" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data textarea">
-                    <textarea rows cols="50" id="adres" required></textarea>
-                    <div class="underline"></div>
-                    <label for="adres">Adres:</label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="tel" required id="isletmeTelefon">
-                    <div class="underline"></div>
-                    <label for="isletmeTelefon">İşletme Telefon Numarası:</label>
-                </div>
-                <div class="input-data">
-                    <label for="ucretAliyorMu">Ücret Alıyor mu:</label>
-                    <select id="ucretAliyorMu" required>
-                        <option value="yes">Evet</option>
-                        <option value="no">Hayır</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="number" required id="stajSayisi">
-                    <div class="underline"></div>
-                    <label for="stajSayisi">Staj Sayısı:</label>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <label for="baslangicTarihi">Staj Başlangıç Tarihi:</label>
-                    <input type="date" id="baslangicTarihi" required>
-                </div>
-                <div class="input-data">
-                    <label for="bitisTarihi">Staj Bitiş Tarihi:</label>
-                    <input type="date" id="bitisTarihi" required>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="submit" value="Gönder">
-                </div>
-            </div>
-        </form>
-    </div>
+    <h2>Staj Bilgi Formu</h2>
+    <form action="/submit_internship_form" method="POST">
 
-    <script>
-        function calculateDays() {
-            var baslangicDate = new Date(document.getElementById('baslangicTarihi').value);
-            var bitisDate = new Date(document.getElementById('bitisTarihi').value);
-            var timeDifference = Math.abs(bitisDate.getTime() - baslangicDate.getTime());
-            var dayDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        <label for="StudentNo">Öğrenci Numarası</label>
+        <input type="text" id="StudentNo" name="StudentNo"><br><br>
 
-            alert("Staj Süresi: " + dayDifference + " gün");
-        }
-    </script>
+        <label for="FullName">Ad-Soyad</label>
+        <input type="text" id="FullName" name="FullName"><br><br>
+
+        <label for="TC_NO">TC No:</label>
+        <input type="text" id="TC_NO" name="TC_NO"><br><br>
+
+        <label for="InternshipStartDate">Staj Başlama Tarihi:</label>
+        <input type="date" id="InternshipStartDate" name="InternshipStartDate"><br><br>
+
+        <label for="InternshipEndDate">Staj Bitiş Tarihi: </label>
+        <input type="date" id="InternshipEndDate" name="InternshipEndDate"><br><br>
+
+        <label for="Department">Bölümü: </label>
+        <input type="text" id="Department" name="Department"><br><br>
+
+
+        <label for="StudentGSMNumber">Öğrenci Telefon Numarası:</label>
+        <input type="tel" id="StudentGSMNumber" name="StudentGSMNumber"
+            pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" placeholder="5xx xxx xx xx" required><br><br>
+
+        <label for="CompanyName">İş Yeri İsmi:</label>
+        <input type="text" id="CompanyName" name="CompanyName"><br><br>
+
+        <label for="NumberOfEmployees">Şirkette Çalışan Sayısı:</label>
+        <input type="number" id="NumberOfEmployees" name="NumberOfEmployees"><br><br>
+
+        <label for="CompanyPhone">Şirketin Telefon Numarası: </label>
+        <input type="tel" id="CompanyPhone" name="CompanyPhone" pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
+            placeholder="5xx xxx xx xx" required><br><br>
+
+        <label for="CompanyAddress">İş Yeri Adresi: </label>
+        <input type="text" id="CompanyAddress" name="CompanyAddress"><br><br>
+
+        <label for="RequestedGovernmentAidAmount">Aldığı Maaş:</label>
+        <input type="number" id="RequestedGovernmentAidAmount" name="RequestedGovernmentAidAmount"><br><br>
+
+        <label for="ReceivesSalary">Maaş Alıyor</label>
+        <input type="checkbox" id="ReceivesSalary" name="ReceivesSalary"><br><br>
+
+        <label for="DoesNotReceiveSalary">Maaş Almıyor</label>
+        <input type="checkbox" id="DoesNotReceiveSalary" name="DoesNotReceiveSalary"><br><br>
+
+        <label for="Gender">Cinsiyet</label>
+        <select id="Gender" name="Gender">
+            <option value="female">Kadın</option>
+            <option value="male">Erkek</option>
+        </select><br><br>
+
+        <label for="Age">Yaş:</label>
+        <input type="text" id="Age" name="Age"><br><br>
+
+        <label for="ReceivesHealthInsurance">SGK Sağlık Hizmetlerinden Faydalanıyor mu?</label>
+        <input type="checkbox" id="ReceivesHealthInsurance" name="ReceivesHealthInsurance"><br><br>
+
+       <label for="BirthDate">Doğum Tarihi:</label>
+       <input type="date" name="BirthDate" min="1950-01-01" max="2024-01-01" />
+
+        <label for="EmailSendingDate">Formu Gönderdiği Tarih</label>
+        <input type="date" id="EmailSendingDate" name="EmailSendingDate"><br><br>
+
+        <label for="Level">Yaptığı Staj Sayısı</label>
+        <select id="Level" name="Level">
+            <option value="staj1">1</option>
+            <option value="staj2">2</option>
+            <option value="staj3">3</option>
+        </select><br><br>
+        <label for="fileUpload">İş Yeri ile alakalı belgeyi lütfen yükleyin: </label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx"><br><br>
+
+        <input type="submit" value="Gönder">
+    </form>
 </body>
-</html>
 
+<script>
+    function toggleSalaryOptions(checkbox) {
+        var receivesSalaryCheckbox = document.getElementById('ReceivesSalary');
+        var doesNotReceiveSalaryCheckbox = document.getElementById('DoesNotReceiveSalary');
+
+        if (checkbox.id === 'ReceivesSalary' && checkbox.checked) {
+            doesNotReceiveSalaryCheckbox.checked = false;
+        } else if (checkbox.id === 'DoesNotReceiveSalary' && checkbox.checked) {
+            receivesSalaryCheckbox.checked = false;
+        } else if (!checkbox.checked) {
+            receivesSalaryCheckbox.disabled = false;
+            doesNotReceiveSalaryCheckbox.disabled = false;
+        }
+
+        // Sadece bir kutucuğun seçilmesini sağlama
+        if (receivesSalaryCheckbox.checked && doesNotReceiveSalaryCheckbox.checked) {
+            if (checkbox.id === 'ReceivesSalary') {
+                doesNotReceiveSalaryCheckbox.checked = false;
+            } else {
+                receivesSalaryCheckbox.checked = false;
+            }
+        }
+
+        receivesSalaryCheckbox.disabled = receivesSalaryCheckbox.checked;
+        doesNotReceiveSalaryCheckbox.disabled = doesNotReceiveSalaryCheckbox.checked;
+    }
+</script>
+
+<script>
+    function validatePhoneNumber() {
+        var phoneNumber = document.getElementById('StudentGSMNumber').value;
+        var phoneRegex = /^[5-9]\d{2} ?\d{3} ?\d{2} ?\d{2}$/;
+
+        if (!phoneRegex.test(phoneNumber)) {
+            alert("Please enter a valid GSM number.");
+            return false;
+        }
+
+        return true;
+    }
+
+    // Formun submit edilmeden önce telefon numarasını kontrol et
+    document.querySelector('form').onsubmit = function () {
+        return validatePhoneNumber();
+    };
+</script>

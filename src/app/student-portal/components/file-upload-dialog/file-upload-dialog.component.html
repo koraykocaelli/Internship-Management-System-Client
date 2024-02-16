@@ -1,15 +1,56 @@
-<div>
-  <h2>Dosya Yükleme</h2>
-  <form>
-    <label for="stajDefteri">Staj Defteri Yükle:</label>
-    <input type="file" id="stajDefteri" name="stajDefteri" accept=".pdf">
-    <br>
-    <label for="haftalikTablo">Haftalık Tablo Yükle:</label>
-    <input type="file" id="haftalikTablo" name="haftalikTablo" accept=".pdf">
-    <br>
-    <label for="yoklamaCizelgesi">Yoklama Çizelgesi Yükle:</label>
-    <input type="file" id="yoklamaCizelgesi" name="yoklamaCizelgesi" accept=".pdf">
-    <br>
-    <button type="submit">Yükle</button>
-  </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dosya Yükleme Formu</title>
+  <style>
+    .container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" id="popup">
+    <div class="close-button">
+      <button type="button" onclick="closePopup()">X</button>
+    </div>
+    <h2>Dosya Yükleme</h2>
+    <p>Staj Defterinizi yüklerken, tüm bilgilerinizi tek bir pdf halinde yükleyiniz, eksik belge durumunda hocanıza
+      haber veriniz.</p>
+    <form>
+      <label for="stajDefteri">Staj Defteri Yükle:</label>
+      <input type="file" id="stajDefteri" name="stajDefteri" accept=".pdf">
+      <button type="submit">Yükle</button>
+      <button type="button" class="edit-button">Düzenle</button>
+    </form>
+  </div>
+
+  <script>
+    var popup = document.getElementById("popup");
+
+    // Popup dışına tıklamayı algılayan event listener
+    window.addEventListener("click", function(event) {
+      if (event.target == popup) {
+        popup.style.display = "none";
+      }
+    });
+
+    function closePopup() {
+      popup.style.display = "none";
+    }
+  </script>
+
+
+</body>
+
+</html>
