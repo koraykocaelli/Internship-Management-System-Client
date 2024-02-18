@@ -1,24 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FileUploadDialogComponent } from '../file-upload-dialog/file-upload-dialog.component';
+import { FileUploadOptions } from '../../../services/common/file-upload/file-upload.component';
 
-@Component({
+ @Component({
   selector: 'app-student-intership-approval',
   templateUrl: './student-intership-approval.component.html',
-  styleUrl: './student-intership-approval.component.scss'
+   styleUrl: './student-intership-approval.component.scss'
 })
 export class StudentInternshipApprovalComponent {
-  
-  constructor(public dialog: MatDialog) { }
 
-  openFileUploadDialog(): void {
-    const dialogRef = this.dialog.open(FileUploadDialogComponent, {
-      width: '400px',
-    });
+   @Output() fileUploadOptions: Partial<FileUploadOptions>={
+      action: "upload",
+      controller:"advisor",
+      explanation: "dosyaları sürükleyin veya seçin.",
+      isAdminPage: true,
+      accept:".pdf, .jpg, .rar, .zip"
+   };
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // Pop-up kapandıktan sonra yapılacak işlemler
-    });
-  }
-}
+ }

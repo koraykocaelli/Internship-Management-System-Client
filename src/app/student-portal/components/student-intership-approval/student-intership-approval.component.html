@@ -15,10 +15,13 @@
       <div class="col col-4" data-label="Approval">Onay</div>
       <div class="col col-5" data-label="File Upload">
         <div class="col col-5" data-label="File Upload">
-          <button (click)="openFileUploadDialog()">Dosya Yükle</button>
+          <!-- <button (click)="openFileUploadDialog()">Dosya Yükle</button> -->
 
         </div>
       </div>
     </li>
   </ul>
 </div>
+
+<hr />
+<app-file-upload [options]="fileUploadOptions"></app-file-upload>
