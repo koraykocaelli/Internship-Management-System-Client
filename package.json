@@ -25,6 +25,7 @@
     "guid-typescript": "^1.0.9",
     "jquery": "^3.7.1",
     "lightbox": "^0.5.0",
+    "ngx-file-drop": "^16.0.0",
     "ngx-spinner": "^16.0.2",
     "ngx-toastr": "^18.0.0",
     "owl.carousel2": "^2.2.2",
