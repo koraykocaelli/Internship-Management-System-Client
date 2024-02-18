@@ -10,24 +10,37 @@
     return userRole ? userRole : 'guest';
   }
   
-
+  
    constructor(private jwtHelper : JwtHelperService) { }
 
    identityCheck(){
-     const token: string | null = localStorage.getItem("accessToken");
-
+    const token: string | null = localStorage.getItem("accessToken");
+    
+    //USER
+    //const user: string | null = localStorage.getItem("userID");
     
 
-     let expired: boolean;
-     try {
+      let expired: boolean;
+
+      try {
        expired = this.jwtHelper.isTokenExpired(token);
-     } catch {
-       expired = true;
-     }
+      //USER  
+      //expired = this.jwtHelper.isTokenExpired(user);
+      } catch {
+        expired = true;
+      }
 
-     _isAuthenticated = token != null && !expired;
+     
+      //_isAuthenticated = user != null && !expired;
 
-   }
+    
+    
+       _isAuthenticated = token != null && !expired;
+
+       //_isAuthenticated = token != null && user != null && !expired;
+
+   
+    }
    
 
    get isAuthenticated(): boolean {

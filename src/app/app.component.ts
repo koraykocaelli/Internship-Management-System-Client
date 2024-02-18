@@ -21,8 +21,15 @@ export class AppComponent implements OnInit {
     this.redirectToPortal();
   }
 
-  refreshPage(): void {
-    window.location.reload();
+  //refreshPage(): void {
+  //  window.location.reload();
+  //}
+
+  refreshSidebar(): void {
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
   }
 
   signOut(): void {

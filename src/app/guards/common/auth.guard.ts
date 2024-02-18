@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { SpinnerType } from '../../base/base.component';
 import { AuthService, _isAuthenticated } from '../../services/common/auth.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,13 +20,18 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-     const token: string | null = localStorage.getItem("accessToken");
+      const token: string | null = localStorage.getItem("accessToken");
+     //USER 
+     //const user: string | null = localStorage.getItem("userRole");
 
      this.spinner.show(SpinnerType.BallNewton);
 
      let expired: boolean;
      try {
        expired = this.jwtHelper.isTokenExpired(token);
+
+      //USER
+       //expired = this.jwtHelper.isTokenExpired(user);
      } catch {
        expired = true;
      }
