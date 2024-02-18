@@ -38,6 +38,7 @@
        _isAuthenticated = token != null && !expired;
 
        //_isAuthenticated = token != null && user != null && !expired;
+       //_isAuthenticated = token != null && user != null && !expired;
 
    
     }
