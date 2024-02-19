@@ -37,7 +37,8 @@ export class UserService {
      const tokenResponse: TokenResponse = await firstValueFrom(observable) as TokenResponse;
      if(tokenResponse)
      localStorage.setItem("accessToken", tokenResponse.token.accessToken);
-    
+     localStorage.setItem("userID", tokenResponse.userID)
+     localStorage.setItem("userTypeName", tokenResponse.userTypeName)
      this.toastrService.message("Akademisyen Girişi Başarıyla Sağlanmıştır." , "Hoşgeldiniz!",{
          messageType : ToastrMessageType.Success,
          position:ToastrPosition.TopRight
@@ -77,7 +78,8 @@ export class UserService {
      const tokenResponse: TokenResponse = await firstValueFrom(observable) as TokenResponse;
      if(tokenResponse)
      localStorage.setItem("accessToken", tokenResponse.token.accessToken);
-
+     localStorage.setItem("userID", tokenResponse.userID)
+     localStorage.setItem("userTypeName", tokenResponse.userTypeName)
     
     //USER
     // const userResponse: UserResponse = await firstValueFrom(observable) as UserResponse;

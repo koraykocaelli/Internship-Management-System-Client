@@ -30,14 +30,14 @@ export class AuthGuard implements CanActivate {
      try {
        expired = this.jwtHelper.isTokenExpired(token);
 
-      //USER
+
        //expired = this.jwtHelper.isTokenExpired(user);
      } catch {
        expired = true;
      }
 
       
-     if (!this.authService.isAuthenticated){
+     if (!expired && !token){
       this.router.navigate(["login"], { queryParams: { returnUrl: state.url } });
       this.toastrService.message("Oturum Açmanız Gerekiyor!", "Yetkisiz Erişim!", {
         messageType: ToastrMessageType.Warning,

@@ -15,7 +15,7 @@ import { Navbar2Component } from './navbar2/navbar2.component';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
+
 
 
 @NgModule({
@@ -39,12 +39,13 @@ import { FileUploadComponent } from './services/common/file-upload/file-upload.c
     JwtModule.forRoot({
       config: {
         tokenGetter: () => localStorage.getItem("accessToken"),
-        allowedDomains:["https://imsprojectapi.azurewebsites.net/api"]
+        allowedDomains:["https://localhost:7165/api"]
       }
-    })
+    }),
+    
   ],
   providers: [
-    {provide: "baseUrl", useValue: "https://imsprojectapi.azurewebsites.net/api", multi:true }
+    {provide: "baseUrl", useValue: "https://localhost:7165/api",multi:true }
   ],
   bootstrap: [AppComponent]
 })

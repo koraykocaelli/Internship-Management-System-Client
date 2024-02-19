@@ -10,7 +10,6 @@
     return userRole ? userRole : 'guest';
   }
   
-  
    constructor(private jwtHelper : JwtHelperService) { }
 
    identityCheck(){
@@ -25,10 +24,11 @@
       try {
        expired = this.jwtHelper.isTokenExpired(token);
       //USER  
-      //expired = this.jwtHelper.isTokenExpired(user);
+      // expired = this.jwtHelper.isTokenExpired(user);
       } catch {
         expired = true;
       }
+
 
      
       //_isAuthenticated = user != null && !expired;
@@ -37,8 +37,7 @@
     
        _isAuthenticated = token != null && !expired;
 
-       //_isAuthenticated = token != null && user != null && !expired;
-       //_isAuthenticated = token != null && user != null && !expired;
+      // _isAuthenticated = token != null && user != null && !expired;
 
    
     }
