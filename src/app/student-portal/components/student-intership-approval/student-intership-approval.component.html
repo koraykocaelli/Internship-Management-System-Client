@@ -2,26 +2,20 @@
   <h2>Yapılan Stajlar ve Onay Durumu</h2>
   <ul class="responsive-table">
     <li class="table-header">
-      <div class="col col-1">Staj Sayısı</div>
-      <div class="col col-2">Öğrenci İsmi</div>
-      <div class="col col-3">İş yeri İsmi</div>
-      <div class="col col-4">Onaylama Durumu</div>
-      <div class="col col-5">Dosya Yükleme</div>
+      <div class="col">Staj Sayısı</div>
+      <div class="col">Öğrenci İsmi</div>
+      <div class="col">İş yeri İsmi</div>
+      <div class="col">Onaylama Durumu</div>
+      <div class="col">Dosya Yükleme</div>
     </li>
     <li class="table-row">
-      <div class="col col-1" data-label="staj no">1</div>
-      <div class="col col-2" data-label="Student Name">Ayça</div>
-      <div class="col col-3" data-label="Work place">Arçelik</div>
-      <div class="col col-4" data-label="Approval">Onay</div>
-      <div class="col col-5" data-label="File Upload">
-        <div class="col col-5" data-label="File Upload">
-          <!-- <button (click)="openFileUploadDialog()">Dosya Yükle</button> -->
-
-        </div>
+      <div class="col" data-label="staj no">1</div>
+      <div class="col" data-label="Student Name">Ayça</div>
+      <div class="col" data-label="Work place">Arçelik</div>
+      <div class="col" data-label="Approval">Onay</div>
+      <div class="col" data-label="File Upload">
+        <app-file-upload [options]="fileUploadOptions"></app-file-upload>
       </div>
     </li>
   </ul>
 </div>
-
-<hr />
-<app-file-upload [options]="fileUploadOptions"></app-file-upload>

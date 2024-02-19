@@ -1,5 +1,5 @@
 <div class="center">
-    <ngx-file-drop dropZoneLabel="Drop files here"  (onFileDrop)="selectedFiles($event)">
+    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="selectedFiles($event)">
         <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
             {{options.explanation}}
             Staj defterinizi tek bir pdf halinde yükleyiniz, eksik dosya durumunda danışmanınıza haber veriniz.
@@ -16,6 +16,7 @@
             <tbody class="upload-name-style">
                 <tr *ngFor="let item of files; let i=index">
                     <td><strong>{{ item.relativePath }}</strong></td>
+                    <td> <button type="button" (click)="confirmDelete(item.relativePath)">Dosya Sil</button></td>
                 </tr>
             </tbody>
         </table>

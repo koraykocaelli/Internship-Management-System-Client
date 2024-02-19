@@ -1,7 +1,4 @@
 import { Component, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { FileUploadDialogComponent } from '../file-upload-dialog/file-upload-dialog.component';
-import { FileUploadOptions } from '../../../services/common/file-upload/file-upload.component';
 
  @Component({
   selector: 'app-student-intership-approval',
@@ -19,3 +16,12 @@ export class StudentInternshipApprovalComponent {
    };
 
  }
+
+ export class FileUploadOptions {
+   controller?: string;
+   action?: string;
+   explanation?: string;
+   accept?: string;
+   isAdminPage?: boolean = false;
+ }
+ 

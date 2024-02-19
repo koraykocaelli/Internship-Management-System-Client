@@ -17,7 +17,6 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { MatDialogModule } from '@angular/material/dialog';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentPortalModule,
     AdvisorPortalModule,
     NgxSpinnerModule,
+    MatDialogModule,
     HttpClientModule,  
     ToastrModule.forRoot(),  
     MatDialogModule,
