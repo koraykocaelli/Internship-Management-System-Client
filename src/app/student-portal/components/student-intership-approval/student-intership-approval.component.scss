@@ -1,94 +1,83 @@
 body {
-  font-family: 'lato', sans-serif;
-  margin: 0;
-}
-
-.container {
-  max-width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h2 {
-  font-size: 26px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-.responsive-table {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-      border-radius: 3px;
-      padding: 25px 30px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 25px;
-
-      .col {
-          flex-basis: 24%; /* Genişlikleri eşit bölelim */
-      }
+    font-family: 'lato', sans-serif;
+    margin: 0;
   }
-
+  
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .responsive-table {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .responsive-table li {
+    border-radius: 3px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .responsive-table .col {
+    flex-grow: 1; /* Flex özelliğini düzeltilmiş hali */
+  }
+  
   .table-header {
-      background-color: firebrick;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #ffffff;
+    position: sticky;
+    top: 0;
+    background-color: firebrick; /* Kırmızı arka plan rengi */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    z-index: 100;
+    width: 100%; /* Başlığın tablonun tamamını kaplamasını sağlar */
   }
-
+  
   .table-row {
-      background-color: #ffffff;
-      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
   }
-
-  .col-1 {
-      flex-basis: 10%;
-  }
-
-  .col-2 {
-      flex-basis: 25%;
-  }
-
-  .col-3 {
-      flex-basis: 25%;
-  }
-
-  .col-4 {
-      flex-basis: 25%;
-  }
-
+  
   @media all and (max-width: 767px) {
-      .table-header {
-          display: none;
-      }
-
-      .table-row {
-          display: block;
-
-          li {
-              display: block;
-              margin-bottom: 15px;
-          }
-
-          .col {
-              flex-basis: 100%;
-              display: flex;
-              padding: 10px 0;
-
-              &:before {
-                  color: #6C7A89;
-                  padding-right: 10px;
-                  content: attr(data-label);
-                  flex-basis: 50%;
-                  text-align: right;
-              }
-          }
-      }
+    .table-header {
+      display: none;
+    }
+  
+    .table-row {
+      display: block;
+    }
+  
+    .table-row li {
+      display: block;
+      margin-bottom: 15px;
+    }
+  
+    .table-row .col {
+      flex-basis: 100%;
+      display: flex;
+      padding: 10px 0;
+    }
+  
+    .table-row .col:before {
+      color: #6C7A89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+    }
   }
-}
+  
