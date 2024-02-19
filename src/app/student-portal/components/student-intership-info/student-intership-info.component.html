@@ -1,82 +1,82 @@
-<body>
-    <h2>Staj Bilgi Formu</h2>
-    <form action="/submit_internship_form" method="POST">
+<h2>Staj Bilgi Formu</h2>
+<form>
 
-        <label for="StudentNo">Öğrenci Numarası</label>
-        <input type="text" id="StudentNo" name="StudentNo"><br><br>
+    <label for="#txtStudentNo">Öğrenci Numarası</label>
+    <input type="text" id="txtStudentNo" name="txtStudentNo" #txtStudentNo><br><br>
 
-        <label for="FullName">Ad-Soyad</label>
-        <input type="text" id="FullName" name="FullName"><br><br>
+    <label for="#txtFullName">Ad-Soyad</label>
+    <input type="text" id="txtFullName" name="txtFullName" #txtFullName><br><br>
 
-        <label for="TC_NO">TC No:</label>
-        <input type="text" id="TC_NO" name="TC_NO"><br><br>
+    <label for="#txtTcNo">TC No:</label>
+    <input type="text" id="txtTcNo" name="#txtTcNo" #txtTcNo><br><br>
 
-        <label for="InternshipStartDate">Staj Başlama Tarihi:</label>
-        <input type="date" id="InternshipStartDate" name="InternshipStartDate"><br><br>
+    <label for="#txtInternshipStartDate">Staj Başlama Tarihi:</label>
+    <input type="date" id="txtInternshipStartDate" name="txtInternshipStartDate" #txtInternshipStartDate><br><br>
 
-        <label for="InternshipEndDate">Staj Bitiş Tarihi: </label>
-        <input type="date" id="InternshipEndDate" name="InternshipEndDate"><br><br>
+    <label for="#txtInternshipEndDate">Staj Bitiş Tarihi: </label>
+    <input type="date" id="txtInternshipEndDate" name="txtInternshipEndDate" #txtInternshipEndDate><br><br>
 
-        <label for="Department">Bölümü: </label>
-        <input type="text" id="Department" name="Department"><br><br>
+    <label for="#txtDepartment">Bölümü: </label>
+    <input type="text" id="txtDepartment" name="txtDepartment" #txtDepartment><br><br>
+
+    <label for="#txtStudentGSMNumber">Öğrenci Telefon Numarası:</label>
+    <input type="tel" id="txtStudentGSMNumber" name="txtStudentGSMNumber"
+        pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" placeholder="5xx xxx xx xx" required #txtStudentGSMNumber><br><br>
+
+    <label for="#txtCompanyName">İş Yeri İsmi:</label>
+    <input type="text" id="txtCompanyName" name="txtCompanyName" #txtCompanyName><br><br>
+
+    <label for="#txtNumberOfEmployees">Şirkette Çalışan Sayısı:</label>
+    <input type="number" id="txtNumberOfEmployees" name="txtNumberOfEmployees" #txtNumberOfEmployees><br><br>
+
+    <label for="#txtCompanyPhone">Şirketin Telefon Numarası: </label>
+    <input type="tel" id="txtCompanyPhone" name="txtCompanyPhone" pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
+        placeholder="5xx xxx xx xx" required #txtCompanyPhone><br><br>
+
+    <label for="#txtCompanyAddress">İş Yeri Adresi: </label>
+    <input type="text" id="txtCompanyAddress" name="txtCompanyAddress" #txtCompanyAddress><br><br>
+
+    <label for="txtRequestedGovernmentAidAmount">Aldığı Maaş:</label>
+    <input type="number" id="txtRequestedGovernmentAidAmount" name="txtRequestedGovernmentAidAmount" #txtRequestedGovernmentAidAmount><br><br>
+
+    <label for="#txtReceivesSalary">Maaş Alıyor</label>
+    <input type="checkbox" id="txtReceivesSalary" name="txtReceivesSalary" #txtReceivesSalary><br><br>
+
+    <label for="#txtDoesNotReceiveSalary">Maaş Almıyor</label>
+    <input type="checkbox" id="txtDoesNotReceiveSalary" name="txtDoesNotReceiveSalary" #txtDoesNotReceiveSalary><br><br>
+
+    <label for="#txtGender">Cinsiyet</label>
+    <select id="txtGender" name="txtGender" #txtGender>
+        <option value="female">Kadın</option>
+        <option value="male">Erkek</option>
+    </select><br><br>
+
+    <label for="#txtAge">Yaş:</label>
+    <input type="text" id="txtAge" name="txtAge" #txtAge><br><br>
+
+    <label for="#txtReceivesHealthInsurance">SGK Sağlık Hizmetlerinden Faydalanıyor mu?</label>
+    <input type="checkbox" id="txtReceivesHealthInsurance" name="txtReceivesHealthInsurance" #txtReceivesHealthInsurance><br><br>
+
+    <label for="#txtBirthDate">Doğum Tarihi:</label>
+    <input type="date" name="txtBirthDate" min="1950-01-01" max="2024-01-01" #txtBirthDate><br><br>
+
+    <label for="#txtEmailSendingDate">Formu Gönderdiği Tarih</label>
+    <input type="date" id="txtEmailSendingDate" name="txtEmailSendingDate" #txtEmailSendingDate><br><br>
+
+    <label for="#txtLevel">Yaptığı Staj Sayısı</label>
+    <select id="txtLevel" name="txtLevel" #txtLevel>
+        <option value="staj1">1</option>
+        <option value="staj2">2</option>
+        <option value="staj3">3</option>
+    </select><br><br>
+    <!-- <label for="#txtFileUpload">İş Yeri ile alakalı belgeyi lütfen yükleyin: </label>
+    <input type="file" id="txtFileUpload" name="txtFileUpload" accept=".pdf,.doc,.docx" #txtFileUpload><br><br> -->
+
+    <button class="btn" type="submit" (click)="create(txtAge, txtBirthDate, txtCompanyAddress, txtCompanyName, txtCompanyPhone, txtDepartment, txtDoesNotReceiveSalary, txtEmailSendingDate, txtFullName, txtGender, txtInternshipEndDate, txtInternshipStartDate, txtLevel, txtNumberOfEmployees, txtReceivesHealthInsurance, txtReceivesSalary, txtRequestedGovernmentAidAmount, txtStudentGSMNumber, txtStudentNo, txtTcNo)">Gönder</button>
+
+</form>
 
 
-        <label for="StudentGSMNumber">Öğrenci Telefon Numarası:</label>
-        <input type="tel" id="StudentGSMNumber" name="StudentGSMNumber"
-            pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" placeholder="5xx xxx xx xx" required><br><br>
-
-        <label for="CompanyName">İş Yeri İsmi:</label>
-        <input type="text" id="CompanyName" name="CompanyName"><br><br>
-
-        <label for="NumberOfEmployees">Şirkette Çalışan Sayısı:</label>
-        <input type="number" id="NumberOfEmployees" name="NumberOfEmployees"><br><br>
-
-        <label for="CompanyPhone">Şirketin Telefon Numarası: </label>
-        <input type="tel" id="CompanyPhone" name="CompanyPhone" pattern="[0-9]{3}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}"
-            placeholder="5xx xxx xx xx" required><br><br>
-
-        <label for="CompanyAddress">İş Yeri Adresi: </label>
-        <input type="text" id="CompanyAddress" name="CompanyAddress"><br><br>
-
-        <label for="RequestedGovernmentAidAmount">Aldığı Maaş:</label>
-        <input type="number" id="RequestedGovernmentAidAmount" name="RequestedGovernmentAidAmount"><br><br>
-
-        <label for="ReceivesSalary">Maaş Alıyor</label>
-        <input type="checkbox" id="ReceivesSalary" name="ReceivesSalary"><br><br>
-
-        <label for="DoesNotReceiveSalary">Maaş Almıyor</label>
-        <input type="checkbox" id="DoesNotReceiveSalary" name="DoesNotReceiveSalary"><br><br>
-
-        <label for="Gender">Cinsiyet</label>
-        <select id="Gender" name="Gender">
-            <option value="female">Kadın</option>
-            <option value="male">Erkek</option>
-        </select><br><br>
-
-        <label for="Age">Yaş:</label>
-        <input type="text" id="Age" name="Age"><br><br>
-
-        <label for="ReceivesHealthInsurance">SGK Sağlık Hizmetlerinden Faydalanıyor mu?</label>
-        <input type="checkbox" id="ReceivesHealthInsurance" name="ReceivesHealthInsurance"><br><br>
-
-       <label for="BirthDate">Doğum Tarihi:</label>
-       <input type="date" name="BirthDate" min="1950-01-01" max="2024-01-01" />
-
-        <label for="EmailSendingDate">Formu Gönderdiği Tarih</label>
-        <input type="date" id="EmailSendingDate" name="EmailSendingDate"><br><br>
-
-        <label for="Level">Yaptığı Staj Sayısı</label>
-        <select id="Level" name="Level">
-            <option value="staj1">1</option>
-            <option value="staj2">2</option>
-            <option value="staj3">3</option>
-        </select><br><br>
-        <label for="fileUpload">İş Yeri ile alakalı belgeyi lütfen yükleyin: </label>
-        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.doc,.docx"><br><br>
-
-        <input type="submit" value="Gönder">
-    </form>
-</body>
 
 <script>
     function toggleSalaryOptions(checkbox) {

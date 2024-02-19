@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://imsprojectapi.azurewebsites.net",
+    "target": "https://localhost:7165",
     "secure": false,
     "changeOrigin": true
   }

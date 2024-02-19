@@ -20,30 +20,15 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-      const token: string | null = localStorage.getItem("accessToken");
-     //USER 
-     //const user: string | null = localStorage.getItem("userRole");
-
-     this.spinner.show(SpinnerType.BallNewton);
-
-     let expired: boolean;
-     try {
-       expired = this.jwtHelper.isTokenExpired(token);
-
-      //USER
-       //expired = this.jwtHelper.isTokenExpired(user);
-     } catch {
-       expired = true;
-     }
-
       
      if (!this.authService.isAuthenticated){
-      this.router.navigate(["login"], { queryParams: { returnUrl: state.url } });
+      
       this.toastrService.message("Oturum Açmanız Gerekiyor!", "Yetkisiz Erişim!", {
         messageType: ToastrMessageType.Warning,
         position: ToastrPosition.TopRight
       });
       this.spinner.hide(SpinnerType.BallNewton);
+      this.router.navigate(["login"], { queryParams: { returnUrl: state.url } });
       return false;
     }
 
