@@ -14,7 +14,8 @@
 
    identityCheck(){
     const token: string | null = localStorage.getItem("accessToken");
-    
+    console.log(token)
+    console.log("asdasd")
     //USER
     //const user: string | null = localStorage.getItem("userID");
     
@@ -23,7 +24,7 @@
 
       try {
        expired = this.jwtHelper.isTokenExpired(token);
-      //USER  
+      //USERTYPENAME  
       // expired = this.jwtHelper.isTokenExpired(user);
       } catch {
         expired = true;
@@ -39,12 +40,13 @@
 
       // _isAuthenticated = token != null && user != null && !expired;
 
-   
+      console.log()
     }
    
 
    get isAuthenticated(): boolean {
-     return _isAuthenticated;
+    this.identityCheck()
+    return _isAuthenticated;
    }
    
 

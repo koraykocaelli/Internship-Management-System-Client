@@ -10,7 +10,7 @@ import { AuthService, _isAuthenticated } from '../../services/common/auth.servic
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class StudentGuard implements CanActivate {
   constructor(
     private jwtHelper: JwtHelperService,
     private router: Router,
