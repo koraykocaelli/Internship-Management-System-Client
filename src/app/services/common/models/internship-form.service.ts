@@ -13,6 +13,7 @@ export class InternshipFormService {
 
     this.httpClientService.post({
       controller: "Internship",
+      action: "CreateInternship"
     }, internship)
       .subscribe(result => {
         successCallBack();

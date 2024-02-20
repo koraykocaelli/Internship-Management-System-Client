@@ -10,7 +10,7 @@ import { AuthService, _isAuthenticated } from '../../services/common/auth.servic
 @Injectable({
   providedIn: 'root'
 })
-export class StudentGuard implements CanActivate {
+export class AdvisorGuard implements CanActivate {
   constructor(
     private jwtHelper: JwtHelperService,
     private router: Router,
@@ -22,7 +22,7 @@ export class StudentGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const userTypeName: string = this.authService.getUserRole();
     console.log(userTypeName)
-     if (!this.authService.isAuthenticated || userTypeName !== "Student"){
+     if (!this.authService.isAuthenticated || userTypeName !== "Advisor"){
       
       this.toastrService.message("Oturum Açmanız Gerekiyor!", "Yetkisiz Erişim!", {
         messageType: ToastrMessageType.Warning,

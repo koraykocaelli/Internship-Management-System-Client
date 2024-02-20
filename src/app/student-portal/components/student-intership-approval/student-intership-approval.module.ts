@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentInternshipApprovalComponent } from './student-intership-approval.component';
+import { StudentIntershipApprovalComponent } from './student-intership-approval.component';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FileUploadModule } from '../../../services/common/file-upload/file-upload.module';
@@ -9,14 +9,14 @@ import { FileUploadModule } from '../../../services/common/file-upload/file-uplo
 
 @NgModule({
   declarations: [
-    StudentInternshipApprovalComponent
+    StudentIntershipApprovalComponent
   ],
   imports: [
     CommonModule,
     MatDialogModule,
     FileUploadModule,
     RouterModule.forChild([
-      {path: "", component: StudentInternshipApprovalComponent}
+      {path: "", component: StudentIntershipApprovalComponent}
     ])
 
   ],

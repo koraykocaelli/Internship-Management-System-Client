@@ -6,7 +6,7 @@
  })
  export class AuthService {
   getUserRole(): string {
-    const userRole = localStorage.getItem('userRole');
+    const userRole = localStorage.getItem('userTypeName');
     return userRole ? userRole : 'guest';
   }
   
@@ -14,8 +14,7 @@
 
    identityCheck(){
     const token: string | null = localStorage.getItem("accessToken");
-    console.log(token)
-    console.log("asdasd")
+
     //USERa
     //const user: string | null = localStorage.getItem("userID");
     
@@ -41,7 +40,7 @@
 
       // _isAuthenticated = token != null && user != null && !expired;
 
-      console.log()
+      
     }
    
 
