@@ -5,11 +5,11 @@ import { Component, Output } from '@angular/core';
   templateUrl: './student-intership-approval.component.html',
    styleUrl: './student-intership-approval.component.scss'
 })
-export class StudentInternshipApprovalComponent {
+export class StudentIntershipApprovalComponent {
 
    @Output() fileUploadOptions: Partial<FileUploadOptions>={
       action: "upload",
-      controller:"advisor",
+      controller:"Advisor",
       explanation: "dosyaları sürükleyin veya seçin.",
       isAdminPage: true,
       accept:".pdf, .jpg, .rar, .zip"

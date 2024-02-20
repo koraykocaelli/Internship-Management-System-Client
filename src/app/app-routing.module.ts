@@ -8,6 +8,8 @@ import { ApLayoutComponent } from './advisor-portal/ap-layout/ap-layout.componen
 import { StudentInfoComponent } from './student-portal/components/student-info/student-info.component';
 import { OgBilgiComponent } from './advisor-portal/components/og-bilgi/og-bilgi.component';
 import { AuthGuard } from './guards/common/auth.guard';
+import { StudentGuard } from './guards/common/student.guard';
+import { AdvisorGuard } from './guards/common/advisor.guard';
 
 
 const routes: Routes = [
@@ -21,20 +23,19 @@ const routes: Routes = [
 
   { 
     path: "student-portal", component: SpLayoutComponent, children: [
-      { path: "", component: StudentInfoComponent, canActivate: [AuthGuard]},
-      { path: "student-intership-approval", loadChildren: () => import("./student-portal/components/student-intership-approval/student-intership-approval.module").then(module => module.StudentIntershipApprovalModule), canActivate: [AuthGuard] },
-      {path: "student-intership-info", loadChildren: ()=> import("./student-portal/components/student-intership-info/student-intership-info.module").then(module => module.StudentIntershipInfoModule), canActivate: [AuthGuard]},
+      { path: "", component: StudentInfoComponent, canActivate: [StudentGuard]},
+      { path: "student-intership-approval", loadChildren: () => import("./student-portal/components/student-intership-approval/student-intership-approval.module").then(module => module.StudentIntershipApprovalModule), canActivate: [StudentGuard] },
+      {path: "student-intership-info", loadChildren: ()=> import("./student-portal/components/student-intership-info/student-intership-info.module").then(module => module.StudentIntershipInfoModule), canActivate: [StudentGuard]},
       
-      
-    ], canActivate: [AuthGuard]
+    ], canActivate: [StudentGuard]
   },  
 
   { 
     path: "advisor-portal", component: ApLayoutComponent, children: [
-      { path: "", component: OgBilgiComponent, canActivate: [AuthGuard] },
-      { path: "og-staj-def", loadChildren: () => import("./advisor-portal/components/og-staj-def/og-staj-def.module").then(module => module.OgStajDefModule), canActivate: [AuthGuard] },
-      {path: "onayb-og", loadChildren: ()=> import("./advisor-portal/components/onayb-og/onayb-og.module").then(module => module.OnaybOgModule), canActivate: [AuthGuard]},
-    ], canActivate: [AuthGuard]
+      { path: "", component: OgBilgiComponent, canActivate: [AdvisorGuard] },
+      { path: "og-staj-def", loadChildren: () => import("./advisor-portal/components/og-staj-def/og-staj-def.module").then(module => module.OgStajDefModule), canActivate: [AdvisorGuard] },
+      {path: "onayb-og", loadChildren: ()=> import("./advisor-portal/components/onayb-og/onayb-og.module").then(module => module.OnaybOgModule), canActivate: [AdvisorGuard]},
+    ], canActivate: [AdvisorGuard]
   },
 
   { path: "", component: HomeComponent },

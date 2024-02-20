@@ -34,6 +34,8 @@ export class AppComponent implements OnInit {
 
   signOut(): void {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("userID");
+    localStorage.removeItem("userTypeName");
     this.authService.identityCheck();
     this.router.navigate([""]);
     this.toastrService.message("Oturum Kapatılmıştır!","Oturum Kapatıldı!",{
